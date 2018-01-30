@@ -1,0 +1,8 @@
+1.First step is to resize  the input image, so that it has square dimensions.I have taken 4946*4946 size. to resize the image run resize_small.py. Change the name of input file and output file
+2. Now the next step is to flip the phase of the protein image, run the command in ctf.sh file , edit the file to adjust your parameters and give correct the name of the input in the command to match output of 1.
+3.A new folder will be created and you will be able to find the image with phase flipped as hdf.
+4. Now we convert the hdf file into mrc using the following command " e2proc2d.py inputfilename.hdf outputfilename.mrc"
+5. Next step is fourier transformation of the input image, The python program fft.py can be used to do fft of input image, the output of this program is fourier transformation of input image.
+6. Next step is to take a single reference image and pad the reference image and do the fft, it can be done by script padding.py
+
+7.The final step is to do the inverse fft with the script inversefft.py and find localMaxima using localMaxima.py.[Adjust the names of input and output in scripts]
